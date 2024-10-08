@@ -44,7 +44,7 @@ h2 {
   }
   
 .navbar a:hover, .dropdown:hover .dropbtn {
-    background-color: red;
+    background-color: rgb(48, 47, 47);
   }
   
 .dropdown-content {
