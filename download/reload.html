@@ -1,5 +1,5 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,7 +11,6 @@
     <meta name="description" content="Small programming assignment using events, variables, functions and conditional logic">
 </head>
 <body>
-    <a href="https://neit-jeremy-2024.netlify.app/">Go Back</a>
     <!--Main content of the site-->
     <div>
         <!--Control and output for the "shoot" functionality-->
@@ -50,9 +49,7 @@
         var currentAmmo = max
         //Amount of ammo in the character's inventory
         var inventory = 10
-        
 
-        var x = `you are out of ammo`
         //Changes the words between <span> and </span> for each span element
         triggerDisplay.innerHTML = `AMMO: ${currentAmmo}`
         reloadDisplay.innerHTML = `INVENTORY: ${inventory}`
@@ -62,7 +59,6 @@
         */
         triggerButton.addEventListener(`click`, shoot)
         reloadButton.addEventListener(`click`, reload)
-    
 
         /*
         When the shoot function is executed by a user/player clicking the trigger button:
@@ -74,7 +70,7 @@
         function shoot(event)
         {
             currentAmmo--
-            if(currentAmmo < 0)
+            if(currentAmmo<0)
             {
                 currentAmmo = 0;
             }
@@ -83,34 +79,15 @@
         function reload(event)
         {
             currentAmmo--
-            
-            if(inventory > 0)
+            if(currentAmmo<6)
             {
-                inventory -= 6 - currentAmmo;
+              inventory -= currentAmmo;
                 currentAmmo = 6;
                 
-                triggerDisplay.innerHTML`AMMO: ${currentAmmo}`
-                reloadDisplay.innerHTML`INVENTORY: ${inventory - currentAmmo}`
-                
-               // inventory = 0;
-            // reloadDisplay.innerHTML = `INVENTORY: ${inventory}`
             }
-            // triggerDisplay.innerHTML = `AMMO: ${6}`
-            // reloadDisplay.innerHTML = `INVENTORY: ${inventory - currentAmmo}`
-            else if (inventory < 0){
-               // inventory = 6 - currentAmmo - inventory;
-               // currentAmmo = 6;
-               // triggerDisplay.innerHTML`AMMO: ${6}`
-               // reloadDisplay.innerHTML`INVENTORY: ${inventory}`
+            triggerDisplay.innerHTML = `AMMO: ${6}`
+            reloadDisplay.innerHTML = `inventory ${inventory}`
 
-                inventory = 0;
-             reloadDisplay.innerHTML = `INVENTORY: ${inventory}`
-                
-            }
-            //reloadDisplay.innerHTML = `Inventory: ${x}`
-            else {
-                reloadDisplay.innerHTML = x;
-            }
 
         }
 
@@ -126,15 +103,5 @@
             d. EXTRA CHALLENGE: Figure out how much ammo to load. This will require some math based on how much ammo has been expended and the maximum amount ammo the weapon can hold
         --------------------------------------------------*/
     </script>
-
-        <body>
-
-
-
-
-
-
-
-
-        </body>
+</body>
 </html>
