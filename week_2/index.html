@@ -82,35 +82,36 @@
         }
         function reload(event)
         {
-            currentAmmo--
+            inventory--
             
-            if(inventory > 0)
+            if(inventory < 0)
             {
-                inventory -= 6 - currentAmmo;
-                currentAmmo = 6;
-                
-                triggerDisplay.innerHTML`AMMO: ${currentAmmo}`
-                reloadDisplay.innerHTML`INVENTORY: ${inventory - currentAmmo}`
-                
-               // inventory = 0;
-            // reloadDisplay.innerHTML = `INVENTORY: ${inventory}`
-            }
-            // triggerDisplay.innerHTML = `AMMO: ${6}`
-            // reloadDisplay.innerHTML = `INVENTORY: ${inventory - currentAmmo}`
-            else if (inventory < 0){
-               // inventory = 6 - currentAmmo - inventory;
-               // currentAmmo = 6;
-               // triggerDisplay.innerHTML`AMMO: ${6}`
-               // reloadDisplay.innerHTML`INVENTORY: ${inventory}`
-
                 inventory = 0;
-             reloadDisplay.innerHTML = `INVENTORY: ${inventory}`
+                
+                
+            
+                
+
+            }
+
+            else if (inventory > 0){
+               
+                currentAmmo ++;
+
                 
             }
-            //reloadDisplay.innerHTML = `Inventory: ${x}`
-            else {
-                reloadDisplay.innerHTML = x;
+
+            if(currentAmmo >= max)
+            {
+                currentAmmo = max;
             }
+            else if(currentAmmo == max)
+            {
+                document.querySelector(`#reload button`) = false;
+            }
+                reloadDisplay.innerHTML`INVENTORY: ${inventory}`
+                triggerDisplay.innerHTML`AMMO: ${currentAmmo}`
+                
 
         }
 
