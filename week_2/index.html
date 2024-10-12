@@ -52,7 +52,7 @@
         var inventory = 10
         
 
-        var x = `you are out of ammo`
+    
         //Changes the words between <span> and </span> for each span element
         triggerDisplay.innerHTML = `AMMO: ${currentAmmo}`
         reloadDisplay.innerHTML = `INVENTORY: ${inventory}`
@@ -83,35 +83,33 @@
         function reload(event)
         {
             inventory--
-            
+
             if(inventory < 0)
             {
                 inventory = 0;
-                
-                
-            
-                
 
             }
 
             else if (inventory > 0){
                
                 currentAmmo ++;
+                
 
                 
             }
-
+            
             if(currentAmmo >= max)
             {
                 currentAmmo = max;
             }
-            else if(currentAmmo == max)
+            
+             if(currentAmmo == max)
             {
                 document.querySelector(`#reload button`) = false;
             }
-                reloadDisplay.innerHTML`INVENTORY: ${inventory}`
-                triggerDisplay.innerHTML`AMMO: ${currentAmmo}`
-                
+
+            reloadDisplay.innerHTML`INVENTORY: ${inventory}`
+            triggerDisplay.innerHTML`AMMO: ${currentAmmo}`
 
         }
 

@@ -58,6 +58,7 @@
         Adds functionality to the button so that when it is clicked it will execute the shoot function
         */
         triggerButton.addEventListener(`click`, shoot)
+
         reloadButton.addEventListener(`click`, reload)
 
         /*
@@ -70,23 +71,43 @@
         function shoot(event)
         {
             currentAmmo--
-            if(currentAmmo<0)
+            if(currentAmmo < 0)
             {
                 currentAmmo = 0;
             }
             triggerDisplay.innerHTML = `AMMO: ${currentAmmo}`
         }
+
+        
         function reload(event)
         {
-            currentAmmo--
-            if(currentAmmo<6)
+            inventory--
+            if(inventory < 0)
             {
-              inventory -= currentAmmo;
-                currentAmmo = 6;
+                inventory = 0;
+
+            }
+
+            else if(inventory > 0){
+               
+                currentAmmo ++;
+                
+
                 
             }
-            triggerDisplay.innerHTML = `AMMO: ${6}`
-            reloadDisplay.innerHTML = `inventory ${inventory}`
+            
+            if(currentAmmo >= max)
+            {
+                currentAmmo = max;
+            }
+            
+             if(currentAmmo == max)
+            {
+                document.querySelector(`#reload button`) = false;
+            }
+
+            reloadDisplay.innerHTML = `INVENTORY: ${inventory}`
+            triggerDisplay.innerHTML = `AMMO: ${currentAmmo}`
 
 
         }
