@@ -1,7 +1,6 @@
 var c = document.getElementById("myCanvas");
 var ctx = c.getContext("2d");
-ctx.moveTo(0, 0);
-ctx.lineTo(200, 100);
+ctx.beginPath();
+ctx.fillStyle = "#FFCC00";
+ctx.strokeRect(85, 300, 100, 100);
 ctx.stroke();
-ctx.strokeStyle = "red";
-ctx.strokeRect(20, 20, 150, 100);

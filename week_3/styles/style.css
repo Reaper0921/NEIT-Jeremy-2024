@@ -7,9 +7,9 @@ body{
     justify-content: center;
     align-items: center;
 }
-canvas{
-    border:1px solid black;
-    background-image:url(week_3/images/shapes.png);
+.myCanvas{
+    border:solid black 1px;
+    background-image:url(images/shapes.png);
 }
 
 .square{
@@ -23,7 +23,7 @@ canvas{
     
 }
 .line{
-    border:5px rgb(255, 0, 0);
+ 
     
 }
 .star{
