@@ -1,0 +1,68 @@
+<html>
+<head>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="javascript" href="scripts/fancy.js">
+</head>
+<body>
+    <input type="button" id="submit" value="Submit">
+
+    <input type="text" id="name">
+
+
+
+
+    <script>
+
+
+//Declare your variables here
+
+//1000 milliseconds is one second 
+var fps = 1000/60 
+//The timer calls the game function 60 times per second
+var timer = setInterval(game, fps)
+
+// The logic for the game goes here
+function game()
+{
+   /*--------------------------------------------
+     Typical order of operations is:
+     1. Erase the screen
+     2. Perform math that will move an object
+     3. Handle collision detection
+     4. Update the images on the screen
+--------------------------------------------------*/
+}
+
+        //submit button
+        var button = document.querySelector(`#submit`)
+        submit.addEventListener(`click`, function (e)
+        {
+            alert("You just lost the game")
+        })
+
+                    // name type area
+                            var textInput = document.querySelector(`#name`)
+                    textInput.addEventListener(`keyup`, function(event)
+                    {
+                        //the code representing the key you pressed
+                        console.log(event.keyCode)
+                        console.log(textInput)
+                        console.log(event.target)
+                        event.target.value = `Ha ha, I just changed your typing`
+                    })
+
+                        </script>
+
+
+
+
+
+
+
+</body>
+
+
+
+
+
+</html>
