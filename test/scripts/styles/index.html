@@ -1,0 +1,214 @@
+<html>
+<head>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="javascript" href="scripts/fancy.js">
+</head>
+<body>
+    <input type="button" id="submit" value="Submit">
+
+    <input type="text" id="name">
+
+    <a href="https://neit-jeremy-2024.netlify.app/">Go Back</a>
+
+
+
+ <!-- Button to open the modal -->
+<!--<button onclick="document.getElementById('id01').style.display='block'">Sign Up</button>
+
+ The Modal (contains the Sign Up form) 
+<div id="id01" class="modal">
+  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">times;</span>
+  <form class="modal-content" action="/action_page.php">
+    <div class="container">
+      <h1>Sign Up</h1>
+      <p>Please fill in this form to create an account.</p>
+      <hr>
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter username" name="username" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+
+
+
+
+
+
+
+      <div class="clearfix">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+        <button type="submit" class="signup">Sign Up</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+ Button to open the modal login form 
+<button onclick="document.getElementById('id01').style.display='block'">Login</button>
+
+ The Modal 
+<div id="id01" class="modal">
+  <span onclick="document.getElementById('id01').style.display='none'"
+class="close" title="Close Modal">&times;</span>
+
+ Modal Content 
+  <form class="modal-content animate" action="/action_page.php">
+    <div class="imgcontainer">
+      <img src="img_avatar2.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="username" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+
+      <button type="submit">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+</div>-->
+<script>
+
+                                var Username = []
+                                Username[0] ={Username:`Jeremy`, last:`good`}
+                                Username[1] ={Username:`Fred`, last:`Krueger`}
+                                Username[2] ={Username:`Mike`, last:`Meyers`}
+    
+                                console.log(`Name: ${Username[0].Username} ${Username[0].last}`)
+                                console.log(`Name: ${Username[1].Username} ${Username[1].last}`)
+                                console.log(`Name: ${Username[2].Username} ${Username[2].last}`)
+    
+                                //To view the Array in the console
+                                
+                                document.getElementById("demo").innerHTML = people;
+                                function myFunction() {
+                                fruits.type(event);
+                                document.getElementById("demo").innerHTML = people;
+                                }
+                                console.log(people)
+    //Declare your variables here
+    
+    //1000 milliseconds is one second 
+    var fps = 1000/60 
+    //The timer calls the game function 60 times per second
+    var timer = setInterval(game, fps)
+    
+    
+    // The logic for the game goes here
+    function game()
+    {
+       /*--------------------------------------------
+         Typical order of operations is:
+         1. Erase the screen
+         2. Perform math that will move an object
+         3. Handle collision detection
+         4. Update the images on the screen
+    --------------------------------------------------*/
+    }
+    
+            //submit button
+            var button = document.querySelector(`#submit`)
+            submit.addEventListener(`click`, function (e)
+            {
+                alert("You just lost the game")
+            })
+    
+                        // name type area
+                                var textInput = document.querySelector(`#name`)
+                        textInput.addEventListener(`keyup`, function(event)
+                        {
+                            //the code representing the key you pressed
+                            console.log(event.keyCode)
+                            console.log(textInput)
+                            console.log(event.target)
+                            //controls the typing and inputs that line instead
+                            //event.target.value = `Ha ha, I just changed your typing`
+                        })
+    
+                        
+    //create boolean variables for the keys you want to use
+        var d = false;
+        var a = false;
+    
+            document.addEventListener(`keydown`, press)
+            function press(event)
+            {
+            //the event variable has a .key property that stores the name of the character that was pressed.
+            //check to see if the key was pressed
+            //set the corresponding variable to true
+                if(event.key ==`d`)
+                {
+                    d = true
+    
+                }
+                if(event.key ==`a`)
+                {
+                a = true
+                }
+            }
+    
+                document.addEventListener(`keydown`, release)
+                function release(event)
+                {
+                //the event variable has a .key property that stores the name of the character that was released.
+                //check to see if the key was released
+                //set the corresponding variable to false
+                    if(event.key ==`d`)
+                    {
+                        d = false
+                    }
+    
+                    if(event.key ==`a`)
+                    {
+                        a = false
+                    }
+                }
+    
+                                    //get coordinates
+                                    function getCoordinates()
+                                    {
+                                    var xCoord = 100
+                                    var yCoord = 800
+                                    var obj = {x:xCoord, y:yCoord} 
+                                    return obj
+                                    }
+    
+                                    alert(`x: ${getCoordinates().x}, y:${getCoordinates().y}`);
+                                    
+    
+                                    //alt way to type code above
+                                    // function getCoordinates()
+                                    // {
+                                    // var xCoord = 100
+                                    // var yCoord = 800
+                                    // return {x:xCoord, y:yCoord} 
+                                    // }
+    
+                                    // var location = getCoordinates()
+                                    // console.log(location)
+    
+                                    // alert(`x:${location.x}, y:${location.y}`);
+
+    
+    
+     </script>
+
+
+
+
+</body>
+
+
+
+
+
+</html>
