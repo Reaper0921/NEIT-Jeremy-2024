@@ -13,7 +13,7 @@ var timer = setInterval(main, fps)
 /*-------------INSTRUCTION--------------
 Create variable calledd score to store amount of "pickups" collected
 ---------------------------------------*/
-var myscore;
+var myscore = 0;
 /*--------------avatar------------
 avatar is the "player controllable" Object
 -----------------------------------*/
