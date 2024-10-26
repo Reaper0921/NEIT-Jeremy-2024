@@ -14,6 +14,16 @@ var timer = setInterval(main, fps)
 Create variable calledd score to store amount of "pickups" collected
 ---------------------------------------*/
 var score = 0;
+
+/*--------------Load Player Image (avatar)------------*/
+var avatarImg = new Image();
+avatarImg.src = 'images/mrt.jpg';  // Image source for the avatar
+
+// Wait for the image to load before starting the game
+avatarImg.onload = function() {
+    timer = setInterval(main, fps);  // Start the game only after the image is loaded
+};
+
 /*--------------avatar------------
 avatar is the "player controllable" Object
 -----------------------------------*/
@@ -127,8 +137,11 @@ function main()
         pickups[i].render();
     }
 
+        // Render the avatar as an image
+        
+
     testPickup.render();
-    avatar.render();
+    ctx.drawImage(avatarImg, avatar.x - avatar.w / 2, avatar.y - avatar.h / 2, avatar.w, avatar.h);
     // if (this.type == "text") {
     //     ctx.font = this.width + " " + this.height;
     //     ctx.fillStyle = color;
