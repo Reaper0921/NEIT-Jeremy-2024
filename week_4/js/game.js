@@ -13,7 +13,17 @@ var timer = setInterval(main, fps)
 /*-------------INSTRUCTION--------------
 Create variable calledd score to store amount of "pickups" collected
 ---------------------------------------*/
-var myscore;
+var score = 0;
+
+/*--------------Load Player Image (avatar)------------*/
+var avatarImg = new Image();
+avatarImg.src = 'images/mrt.jpg';  // Image source for the avatar
+
+// Wait for the image to load before starting the game
+avatarImg.onload = function() {
+    timer = setInterval(main, fps);  // Start the game only after the image is loaded
+};
+
 /*--------------avatar------------
 avatar is the "player controllable" Object
 -----------------------------------*/
@@ -103,7 +113,7 @@ function main()
     {
         testPickup.x = 1000;
         avatar.color = testPickup.color;
-        myscore = myscore + 1;
+        myscore = score + 1;
         /*----------INSTRUCTION------------
         increase the score by one
         -----------------------------------*/
@@ -115,33 +125,45 @@ function main()
         /*----------INSTRUCTION------------
         make the avatar "collect" the pickups and increase the score
         -----------------------------------*/
-        while(avatar.overlaps(pickups[i]))
+        if(pickups[i].overlaps(avatar))
         {
-            if(avatar.x = pickups.x)
-            {
-                pickups[i] --;
-                myscore ++;
+            if (pickups[i].overlaps(avatar)) {
+                pickups[i].x = -1000;  // Move pickup off-screen
+                score++;  // Increase the score for each pickup
             }
-
+    
         }
 
         pickups[i].render();
     }
 
+        // Render the avatar as an image
+        
+
     testPickup.render();
-    avatar.render();
-    if (this.type == "text") {
-        ctx.font = this.width + " " + this.height;
-        ctx.fillStyle = color;
-        ctx.fillText(this.text, this.x, this.y);
-      } else {
-        ctx.fillStyle = color;
-        ctx.fillRect(this.x, this.y, this.width, this.height);
-      }
+    ctx.drawImage(avatarImg, avatar.x - avatar.w / 2, avatar.y - avatar.h / 2, avatar.w, avatar.h);
+    // if (this.type == "text") {
+    //     ctx.font = this.width + " " + this.height;
+    //     ctx.fillStyle = color;
+    //     ctx.fillText(this.text, this.x, this.y);
+    //   } else {
+    //     ctx.fillStyle = color;
+    //     ctx.fillRect(this.x, this.y, this.width, this.height);
+    //   }
 
    /*--------------text----------------*/
    //makes the text center aligned instead of left aligned
-   ctx.textAlign = `center`;
+
+       ctx.textAlign = `center`;
+       ctx.font = '64px Arial';
+       ctx.fillStyle = 'black';  // Text color
+       ctx.fillText("Score: " + score, 140, 70);  // Display score
+   
+       // Check if player has collected all 50 pickups (including testPickup) and won
+       if (score >= totalPickups) {
+           alert("Congratulations! You collected all 50 pickups and won the game!");
+           clearInterval(timer);  // Stop the game loop
+       }
 
     /*----------INSTRUCTION------------
     Set the context's font property to use 64px Arial 
