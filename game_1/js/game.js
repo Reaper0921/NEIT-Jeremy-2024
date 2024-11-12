@@ -5,7 +5,7 @@ Game Setup
  3. frame rate
  4. animation timer runs main function 60 frames per second
 -------------------------------------------*/
-var c = document.querySelector(`MyCanvas`)
+var c = document.querySelector(`canvas`)
 var ctx = c.getContext(`2d`)
 var fps = 1000/60
 var timer = setInterval(main, fps)
@@ -20,18 +20,18 @@ avatar.vy = 2;
 
 
 function updateGameArea() {
-    var x, height, gap, minHeight, maxHeight, minGap, maxGap;
-    // if interacted with enemy stop game
-    for (i = 0; i < myObstacles.length; i += 1) {
-        if (myGamePiece.crashWith(myObstacles[i])) {
-          myGameArea.stop();
-          return;
-        }
-      }
+    // var x, height, gap, minHeight, maxHeight, minGap, maxGap;
+    // // if interacted with enemy stop game
+    // for (i = 0; i < myObstacles.length; i += 1) {
+    //     if (myGamePiece.crashWith(myObstacles[i])) {
+    //       myGameArea.stop();
+    //       return;
+    //     }
+    //  }
 
     //the enemy
-    myObstacles.push(new component(10, height, "green", x, 0));
-    myObstacles.push(new component(10, x - height - gap, "green", x, height + gap));
+    // myObstacles.push(new component(10, height, "green", x, 0));
+    // myObstacles.push(new component(10, x - height - gap, "green", x, height + gap));
 
 
     function main()
